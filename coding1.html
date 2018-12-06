@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 애니메이션1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+
+        .container {
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            display: block;
+            position: absolute;
+            max-width: 350px;
+        }
+
+        h1 {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 42px;
+            margin: 0;
+            line-height: 47px;
+            letter-spacing: 2px;
+        }
+
+        .title {
+            transform: translateX(-50%) rotate(-10deg);
+            display: block;
+            float: left;
+            left: 50%;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .title span {
+            transform: skew(-10deg);
+            display: block;
+            float: left;
+            text-shadow: #222 1px 1px, #222 2px 2px, #222 3px 3px, #222 4px 4px, #222 5px 5px, #222 6px 6px;
+            min-width: 10px;
+            min-height: 10px;
+            position: relative;
+        }
+
+        .title:nth-child(1) {
+            color: #beec8c;
+        }
+
+        .title:nth-child(2) {
+            color: #2b9f5e;
+        }
+
+        .title:nth-child(3) {
+            color: #f1c83c;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <section class="container">
+        <h1>
+            <span class="title">WEB DESIGNER</span>
+            <span class="title">WEB PUBLISHER</span>
+            <span class="title">UMING</span>
+        </h1>
+    </section>
+
+</body>
+
+<script>
+    $(document).ready(function() {
+        $(".title").lettering();
+    });
+
+    $(document).ready(function() {
+        animation();
+    }, 1000);
+
+    function animation() {
+        var title1 = new TimelineMax();
+        title1.to(".button", 0, {
+            visibility: 'hidden',
+            opacity: 0
+        })
+        title1.staggerFromTo(".title span", 0.5, {
+            ease: Back.easeOut.config(1.7),
+            opacity: 0,
+            bottom: -80
+        }, {
+            ease: Back.easeOut.config(1.7),
+            opacity: 1,
+            bottom: 0
+        }, 0.05);
+        title1.to(".button", 0.2, {
+            visibility: 'visible',
+            opacity: 1
+        })
+    }
+
+</script>
+
+</html>
