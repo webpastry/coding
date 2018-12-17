@@ -1,0 +1,67 @@
+<!-- css로만 만든 패럴렉스-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Nunito);
+    html{height:100%;overflow:hidden;}
+    body{height:100%;margin:0;padding:0;font-family:Nunito;perspective:1px;transform-style:preserve-3d;overflow-y:scroll;overflow-x:hidden;}
+
+    .slide{position:relative;width:100vw;min-height:100vh;padding:25vh 10%;box-shadow:0 -1px 10px rgba(0, 0, 0, .3);box-sizing:border-box;transform-style:inherit;}
+    #slide2 img{position:absolute;top:50%;left:35%;height:300px;padding:10px;border-radius:5px;background:rgba(240,230,220, .7);box-shadow:0 0 8px rgba(0, 0, 0, .7);transform:translateZ(.25px) translateX(-94%) translateY(-100%);}
+    #slide2 img:last-of-type{transform:translateZ(.4px) translateX(-104%) translateY(-40%) rotate(-5deg);}
+    .slide:before{position:absolute;top:0;left:0;right:0;bottom:0;content:"";}
+    .title{width:50%;padding:5%;border-radius:5px;background:rgba(255,255,255,0.6);box-shadow:0 0 8px rgba(0, 0, 0, .3);}
+    .slide:nth-child(2n) .title{margin-right:auto;margin-left:0;}
+    .slide:nth-child(2n+1) .title{margin-right:0;margin-left:auto;}
+    .slide, .slide:before{background:50% 50% / cover;}
+
+    .header{color:#fff;font-size:175%;text-align:center;text-shadow:0 2px 2px rgba(0,0,0,0.5);}
+
+    #title{z-index:2;background-image:url("https://cdn.pixabay.com/photo/2015/03/26/09/39/cupcakes-690040_960_720.jpg");}
+    #title h1{transform:translateZ(.25px) scale(.75);transform-origin:50% 100%;}
+    #slide1:before{background-image:url("https://cdn.pixabay.com/photo/2018/05/01/18/21/eclair-3366430_960_720.jpg");transform:translateZ(-1px) scale(2);}
+    #slide2{z-index:2;background-image:url("https://cdn.pixabay.com/photo/2017/01/05/14/11/valentines-day-1955236_960_720.jpg");}
+    #slide3:before{background-image:url("https://cdn.pixabay.com/photo/2016/11/28/10/30/cookie-1864674_960_720.jpg");transform:translateZ(-1px) scale(2);}
+    #slide4{background:#222;}
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div id="title" class="slide header">
+    <h1>CSS로만 만든 패럴랙스</h1>
+  </div>
+
+  <div id="slide1" class="slide">
+    <div class="title">
+      <h1>슬라이드1</h1>
+      <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
+    </div>
+  </div>
+
+  <div id="slide2" class="slide">
+    <div class="title">
+      <h1>슬라이드2</h1>
+      <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
+    </div>
+    <img src="https://lorempixel.com/output/food-h-c-353-462-8.jpg">
+    <img src="https://lorempixel.com/output/food-h-c-353-462-9.jpg">
+  </div>
+
+  <div id="slide3" class="slide">
+    <div class="title">
+      <h1>슬라이드3</h1>
+      <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
+    </div>
+  </div>
+
+  <div id="slide4" class="slide header">
+      <h1>The End</h1>
+  </div>
+
+</body>
+</html>
